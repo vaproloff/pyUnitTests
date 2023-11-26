@@ -36,7 +36,7 @@ class TestCar(unittest.TestCase):
 
     def test_instance_of(self):
         """Тест на наследование"""
-        self.assertIsInstance(self.car, Vehicle)
+        self.assertTrue(isinstance(self.car, Vehicle))
 
     def test_wheels(self):
         """Тест количества колёс"""
@@ -44,6 +44,7 @@ class TestCar(unittest.TestCase):
 
     def test_drive(self):
         """Тест скорости тестового вождения"""
+        self.assertEqual(self.car.speed, 0)
         self.car.test_drive()
         self.assertEqual(self.car.speed, 60)
 
@@ -64,7 +65,7 @@ class TestMotorcycle(unittest.TestCase):
 
     def test_instance_of(self):
         """Тест на наследование"""
-        self.assertIsInstance(self.motorcycle, Vehicle)
+        self.assertTrue(isinstance(self.motorcycle, Vehicle))
 
     def test_wheels(self):
         """Тест количества колёс"""
@@ -72,6 +73,7 @@ class TestMotorcycle(unittest.TestCase):
 
     def test_drive(self):
         """Тест скорости тестового вождения"""
+        self.assertEqual(self.motorcycle.speed, 0)
         self.motorcycle.test_drive()
         self.assertEqual(self.motorcycle.speed, 75)
 
